@@ -1,0 +1,158 @@
+/* Big tablet to 1200px (widths smaller than the 1140 row)*/
+@media only screen and (max-width: 1200px) {
+}
+/* Small tablet to  big tablets: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+  .modal {
+    width: 80%;
+  }
+  .poker {
+    width: 10rem;
+  }
+}
+/* Small phone to  Small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
+  /* -- Main Play board -- */
+  .announce {
+    top: 42%;
+  }
+  .poker {
+    width: 10rem;
+  }
+  /* -- Bet Module -- */
+  .modal {
+    width: 90%;
+  }
+  .bet-label {
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+  /* -- New Game Module -- */
+  .modal-2 {
+    width: 80%;
+  }
+  .token {
+    font-size: 2rem;
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  /* -- Button --*/
+  .btn {
+    font-size: 1.7rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 50rem;
+    font-weight: 600;
+  }
+  .btn--hit {
+    top: 85%;
+  }
+  .btn--stand {
+    top: 92%;
+  }
+  .btn--double {
+    font-size: 1.7rem;
+  }
+  .btn::first-letter {
+    font-size: 1.9rem;
+    display: inline-block;
+    margin-right: 0.7rem;
+  }
+  .btn--double::first-letter {
+    font-size: 1.2rem;
+    margin-right: 0;
+  }
+}
+/* Small phone from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  /* -- Main Play board -- */
+  .player {
+    padding: 1rem;
+  }
+  .name {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+  }
+  .score {
+    font-size: 6rem;
+  }
+  /* ABSLOUTE POSITIONED ELEMENTS */
+  .announce {
+    padding: 0.5rem 0.5rem;
+    top: 35%;
+    font-size: 2rem;
+  }
+  .poker {
+    top: 59%;
+    width: 7rem;
+  }
+  .pokerTotal {
+    width: 15%;
+    top: 3%;
+    padding: 0;
+  }
+  /* -- Bet Module -- */
+  .modal {
+    padding: 2rem 0 2rem 2rem;
+    height: 70%;
+  }
+  .bet {
+    width: 50%;
+  }
+  .bet-choose {
+    top: 39%;
+    left: 10%;
+    font-size: 5rem;
+  }
+  .token {
+    top: 75%;
+    font-size: 2rem;
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  /* -- New Game Module -- */
+  .modal-2 {
+    width: 90%;
+  }
+  /* -- Button --*/
+  .btn {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50rem;
+  }
+  .btn--again {
+    top: 44%;
+  }
+  .btn--insurance {
+    top: 44%;
+  }
+  .btn--hit {
+    top: 76%;
+  }
+  .btn--stand {
+    top: 83%;
+  }
+  .btn--reset {
+    top: 32%;
+    left: 70%;
+  }
+  .btn--deal {
+    top: 46%;
+    left: 70%;
+  }
+  .btn--allIn {
+    top: 60%;
+    left: 70%;
+  }
+  .btn::first-letter {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-right: 0rem;
+  }
+}

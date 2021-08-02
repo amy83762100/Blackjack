@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #edc8bc 0%, #fffacd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.warning {
+  color: #bf2e34;
+}
+/* LAYOUT */
+/* -- Play Board --*/
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+.player {
+  flex: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75;
+}
+
+/* ELEMENT */
+.crown {
+  opacity: 0;
+  width: 10rem;
+  z-index: 5;
+}
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+/* CLASSES TO MAKE MODAL WORK */
+/* -- Bet Module -- */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 80%;
+  background-color: rgb(218, 200, 200);
+  background-image: linear-gradient(to top left, #fffacd 0%, #eabdae 100%);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  /* offset-x | offset-y | blur-radius | color */
+  z-index: 10;
+}
+/* -- New Game Module -- */
+.modal-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 50%;
+  background-color: rgb(218, 200, 200);
+  background-image: linear-gradient(to top left, #feffae 0%, #ffffff 100%);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  /* offset-x | offset-y | blur-radius | color */
+  z-index: 10;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+/* ABSLOUTE POSITIONED ELEMENTS */
+/* -- Main Play board -- */
+.announce {
+  padding: 2rem 2rem;
+  position: absolute;
+  color: aliceblue;
+  left: 50%;
+  transform: translateX(-50%);
+  backdrop-filter: blur(1px);
+  background: radial-gradient(#c7365f, #c7365f70, #c7365f05, #c7365f00);
+  border-radius: 10px;
+  top: 30%;
+}
+.pokerTotal {
+  position: absolute;
+  width: 15%;
+  top: 4%;
+  right: 0%;
+  text-align: center;
+  align-items: baseline;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 05, 0.2),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.01)
+  );
+  padding: 1rem 0;
+}
+.total {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  font-weight: 400;
+}
+.poker--icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* -- Poker -- */
+.poker {
+  position: absolute;
+  top: 60%;
+  width: 13rem;
+  box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.poker-0 {
+  transform: translate(-60%, -20%);
+}
+.poker-1 {
+  transform: translate(-40%, -15%);
+}
+.poker-2 {
+  transform: translate(-20%, -10%);
+}
+.poker-3 {
+  transform: translate(0%, -5%);
+}
+.poker-4 {
+  transform: translate(20%, 0%);
+}
+.poker-5 {
+  transform: translate(40%, 5%);
+}
+/* -- Bet Module -- */
+.bet {
+  position: absolute;
+  width: 30%;
+  top: 91%;
+  left: 0%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+}
+.bet-label {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  margin-top: 0.4rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+  transform: translateX(50%);
+}
+.bet-choose {
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  font-size: 8rem;
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+/* -- Token --*/
+.token {
+  position: absolute;
+  top: 70%;
+  transform: translate(-50%, 0);
+  font-size: 3rem;
+  font-weight: 600;
+  color: #444;
+  width: 10rem;
+  height: 10rem;
+  border: none;
+  background: none;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.token--2 {
+  left: 15%;
+  background-image: url(img/red.png);
+}
+.token--10 {
+  left: 32.5%;
+  background-image: url(img/green.png);
+}
+.token--50 {
+  left: 50%;
+  background-image: url(img/blue.png);
+}
+.token--100 {
+  left: 67.5%;
+  background-image: url(img/darkgreen.png);
+  color: white;
+}
+.token--500 {
+  left: 85%;
+  background-image: url(img/orange.png);
+  color: #fff;
+}
+.token:active {
+  transform: translate(-50%, 3px);
+}
+.token:focus {
+  outline: none;
+}
+/* -- New Game Module -- */
+.highest-label {
+  text-align: center;
+}
+
+/* -- Button -- */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn:focus {
+  outline: none;
+}
+.btn--again {
+  top: 4rem;
+}
+.btn--insurance {
+  top: 30%;
+}
+.btn--hit {
+  top: 30rem;
+}
+.btn--stand {
+  top: 40rem;
+}
+/* -- Bets Module-- */
+.btn--reset {
+  top: 30%;
+  left: 85%;
+}
+.btn--deal {
+  top: 43%;
+  left: 85%;
+}
+.btn--allIn {
+  top: 56%;
+  left: 85%;
+}
+/* -- New Game Module-- */
+.btn--newGame {
+  top: 70%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.btn--double {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(
+    to top left,
+    rgba(205, 212, 99, 0.9),
+    rgba(249, 255, 161, 0.5)
+  );
+  padding: 0.5rem;
+}
+/* js */
+.jack {
+  background: radial-gradient(#c7b136, #c7b13670, #c7b13605, #c7b13600);
+}
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+.player--winner {
+  background-color: #2f2f2f;
+}
+.player--winner .crown {
+  opacity: 1;
+}
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+.hidden {
+  display: none;
+}
