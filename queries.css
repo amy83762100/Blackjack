@@ -1,5 +1,10 @@
 /* Big tablet to 1200px (widths smaller than the 1140 row)*/
 @media only screen and (max-width: 1200px) {
+  .btn--reset,
+  .btn--deal,
+  .btn--allIn {
+    width: 15rem;
+  }
 }
 /* Small tablet to  big tablets: from 768px to 1023px */
 @media only screen and (max-width: 1023px) {
@@ -63,6 +68,11 @@
   .btn--double::first-letter {
     font-size: 1.2rem;
     margin-right: 0;
+  }
+  .btn--reset,
+  .btn--deal,
+  .btn--allIn {
+    width: 12rem;
   }
 }
 /* Small phone from 0 to 480px */
@@ -137,6 +147,11 @@
   }
   .btn--stand {
     top: 83%;
+  }
+  .btn--reset,
+  .btn--deal,
+  .btn--allIn {
+    width: 10rem;
   }
   .btn--reset {
     top: 32%;
